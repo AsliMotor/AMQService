@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E537996-B2D0-447F-9AE7-A905D5AD1D96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AsliMotor.AuditLog.Handlers</RootNamespace>
+    <AssemblyName>AsliMotor.AuditLog.Handlers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsliMotor.Invoices.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AsliMotor\Invoice\AsliMotor.Invoices.Events\bin\Debug\AsliMotor.Invoices.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="AsliMotor.Invoices.Snapshots">
+      <HintPath>..\..\AsliMotor\Invoice\AsliMotor.Invoices.Events\bin\Debug\AsliMotor.Invoices.Snapshots.dll</HintPath>
+    </Reference>
+    <Reference Include="AsliMotor.Products.Events">
+      <HintPath>..\..\AsliMotor\Product\AsliMotor.Product.Events\bin\Debug\AsliMotor.Products.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="AsliMotor.Products.Models">
+      <HintPath>..\..\AsliMotor\Product\AsliMotor.Product.Events\bin\Debug\AsliMotor.Products.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="AsliMotor.SI.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AsliMotor\SI\AsliMotor.SI.Events\bin\Debug\AsliMotor.SI.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="AsliMotor.SI.Repository">
+      <HintPath>..\AsliMotor-Bin\AsliMotor.SI.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="BonaStoco.Inf.Data.ViewModel">
+      <HintPath>..\packages\am-bin\BonaStoco.Inf.Data.ViewModel.dll</HintPath>
+    </Reference>
+    <Reference Include="BonaStoco.Inf.Reporting">
+      <HintPath>..\packages\am-bin\BonaStoco.Inf.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus, Version=2.6.0.1504, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.3.0.3\lib\net40\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core, Version=2.6.0.1504, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.3.0.3\lib\net40\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PriceSupplierInvoiceChangedHandler.cs" />
+    <Compile Include="invoice\InvoiceCustomerChangedHandle.cs" />
+    <Compile Include="invoice\InvoiceProductChangedHandle.cs" />
+    <Compile Include="invoice\InvoicePulledHandle.cs" />
+    <Compile Include="invoice\InvoiceCanceledHandle.cs" />
+    <Compile Include="invoice\InvoiceUangMukaChanged.cs" />
+    <Compile Include="invoice\InvoiceUangAngsuranChanged.cs" />
+    <Compile Include="invoice\InvoiceSukuBungaChanged.cs" />
+    <Compile Include="invoice\InvoiceAngsuranPaid.cs" />
+    <Compile Include="invoice\InvoiceCreatedHandler.cs" />
+    <Compile Include="invoice\InvoiceDueDateChangedHandler.cs" />
+    <Compile Include="invoice\InvoiceLamaAngsuranChanged.cs" />
+    <Compile Include="invoice\InvoicePaymentTypeChanged.cs" />
+    <Compile Include="SupplierInvoiceCreatedHandler.cs" />
+    <Compile Include="ProductCreatedHandler.cs" />
+    <Compile Include="ProductUpdatedHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplierInvoiceChangedHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AsliMotor.AuditLog.Repository\AsliMotor.AuditLog.Repository.csproj">
+      <Project>{9F63DC07-368B-4C3C-A214-F80F613C590F}</Project>
+      <Name>AsliMotor.AuditLog.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsliMotor.ProductAuditLog.Models\AsliMotor.AuditLog.Models.csproj">
+      <Project>{E5F8D321-80DF-4213-83F0-3772D5566BB0}</Project>
+      <Name>AsliMotor.AuditLog.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
