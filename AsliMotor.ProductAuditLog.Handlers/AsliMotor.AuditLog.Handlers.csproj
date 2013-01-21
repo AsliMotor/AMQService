@@ -35,7 +35,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AsliMotor\Invoice\AsliMotor.Invoices.Events\bin\Debug\AsliMotor.Invoices.Events.dll</HintPath>
     </Reference>
-    <Reference Include="AsliMotor.Invoices.Snapshots">
+    <Reference Include="AsliMotor.Invoices.Snapshots, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AsliMotor\Invoice\AsliMotor.Invoices.Events\bin\Debug\AsliMotor.Invoices.Snapshots.dll</HintPath>
     </Reference>
     <Reference Include="AsliMotor.Products.Events">
@@ -77,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="invoice\InvoiceTermChanged.cs" />
     <Compile Include="PriceSupplierInvoiceChangedHandler.cs" />
     <Compile Include="invoice\InvoiceCustomerChangedHandle.cs" />
     <Compile Include="invoice\InvoiceProductChangedHandle.cs" />
