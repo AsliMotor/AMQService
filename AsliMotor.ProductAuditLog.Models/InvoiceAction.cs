@@ -19,6 +19,7 @@ namespace AsliMotor.AuditLog.Models
         InvoicePulled,
         ProductChanged,
         CustomerChanged,
-        HargaJualChanged
+        PriceChanged,
+        TermChanged
     }
 }
