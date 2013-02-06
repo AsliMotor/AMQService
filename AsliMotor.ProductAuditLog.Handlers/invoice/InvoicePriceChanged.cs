@@ -26,7 +26,7 @@ namespace AsliMotor.AuditLog.Handlers.invoice
                     Receive = InvoiceLogRepository.GetLastAngsuran(message.Payload.id),
                     DateTime = message.DateTime,
                     UserName = message.Username,
-                    Action = (int)InvoiceAction.HargaJualChanged
+                    Action = (int)InvoiceAction.PriceChanged
                 });
         }
     }
